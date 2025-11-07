@@ -24,57 +24,130 @@
   <main class="checkout-container">
     <aside class="order-summary">
       <h2>Resumen de compra</h2>
-      <ul>
-        <li>
-          <span>Vanitory Nordik 80 cm</span>
-          <strong>$418.099</strong>
-        </li>
-        <li>
-          <span>Inodoro Ferrum</span>
-          <strong>$286.388</strong>
-        </li>
-      </ul>
-      <div class="totals">
-        <p><span>Subtotal</span><span>$704.487</span></p>
-        <p><span>Envío</span><span>$0</span></p>
-        <p class="total"><span>Total</span><span>$704.487</span></p>
+      <p class="order-summary__empty" id="summary-empty" hidden>
+        Tu carrito está vacío. <a href="plp.html">Volvé a la tienda</a> para agregar productos.
+      </p>
+      <ul id="summary-items"></ul>
+      <div class="totals" id="summary-totals" hidden>
+        <p><span>Subtotal</span><span id="summary-subtotal">$0</span></p>
+        <p><span>Envío</span><span id="summary-shipping">$0</span></p>
+        <p class="total"><span>Total</span><span id="summary-total">$0</span></p>
       </div>
     </aside>
 
     <section class="checkout-steps-content">
+      <header class="step-progress" aria-live="polite">
+        <p class="step-progress__status" id="step-status">Paso 1 de 3</p>
+        <p class="step-progress__title" id="step-title">Dirección de entrega</p>
+        <p class="step-progress__desc" id="step-desc">Completá los datos para coordinar la entrega.</p>
+      </header>
       <form id="checkout-form">
-        <article class="checkout-step active" data-step="1">
+        <article class="checkout-step active" data-step="1" data-step-title="Dirección de entrega" data-step-desc="Completá los datos para coordinar la entrega.">
           <h2>Dirección de entrega</h2>
-          <label>Nombre y apellido<input type="text" name="name" required /></label>
-          <label>Email<input type="email" name="email" required /></label>
-          <label>Teléfono<input type="tel" name="phone" required /></label>
-          <label>Código postal<input type="text" name="zip" required /></label>
-          <label>Dirección<input type="text" name="address" required /></label>
-          <label>Notas para el repartidor<textarea name="notes" rows="3"></textarea></label>
+          <label>
+            Nombre y apellido
+            <input type="text" name="name" required placeholder="Ej: Ana Pérez" />
+            <span class="field-hint">Tal como aparece en tu documento</span>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required placeholder="tuemail@ejemplo.com" />
+            <span class="field-hint">Recibirás allí la confirmación y la factura</span>
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" name="phone" required placeholder="Ej: 11 4567 8901" />
+            <span class="field-hint">Incluí código de área para coordinar la entrega</span>
+          </label>
+          <label>
+            Código postal
+            <input type="text" name="zip" required placeholder="Ej: 1414" />
+            <span class="field-hint">Usamos estos datos para calcular la logística</span>
+          </label>
+          <label>
+            Dirección
+            <input type="text" name="address" required placeholder="Ej: Av. Siempre Viva 742 · Piso 3 D" />
+            <span class="field-hint">Aclarar altura, piso y referencias ayuda al repartidor</span>
+          </label>
+          <label>
+            Notas para el repartidor
+            <textarea name="notes" rows="3" placeholder="Ej: Dejar en portería / llamar antes de llegar"></textarea>
+          </label>
           <button class="btn btn-primary next-step" type="button" data-next="2">Continuar a pago</button>
         </article>
 
-        <article class="checkout-step" data-step="2" hidden>
+        <article class="checkout-step" data-step="2" data-step-title="Pago" data-step-desc="Elegí un método de pago y completá los datos necesarios." hidden>
           <h2>Método de pago</h2>
-          <label><input type="radio" name="payment" value="credit" required /> Tarjeta de crédito</label>
-          <label><input type="radio" name="payment" value="debit" /> Tarjeta de débito</label>
-          <label><input type="radio" name="payment" value="transfer" /> Transferencia bancaria</label>
-          <label><input type="radio" name="payment" value="wallet" /> Billetera digital</label>
+          <div class="payment-options" role="radiogroup" aria-label="Métodos de pago">
+            <label class="payment-card">
+              <input type="radio" name="payment" value="credit" />
+              <div class="payment-card__body">
+                <span class="payment-card__icon">💳</span>
+                <div>
+                  <span class="payment-card__title">Tarjeta de crédito</span>
+                  <span class="payment-card__hint">Visa, MasterCard, Amex · Hasta 12 cuotas</span>
+                </div>
+              </div>
+            </label>
+            <label class="payment-card">
+              <input type="radio" name="payment" value="debit" />
+              <div class="payment-card__body">
+                <span class="payment-card__icon">🏦</span>
+                <div>
+                  <span class="payment-card__title">Tarjeta de débito</span>
+                  <span class="payment-card__hint">Acreditación inmediata</span>
+                </div>
+              </div>
+            </label>
+            <label class="payment-card">
+              <input type="radio" name="payment" value="transfer" />
+              <div class="payment-card__body">
+                <span class="payment-card__icon">💼</span>
+                <div>
+                  <span class="payment-card__title">Transferencia bancaria</span>
+                  <span class="payment-card__hint">Te enviaremos los datos al confirmar</span>
+                </div>
+              </div>
+            </label>
+            <label class="payment-card">
+              <input type="radio" name="payment" value="wallet" />
+              <div class="payment-card__body">
+                <span class="payment-card__icon">📱</span>
+                <div>
+                  <span class="payment-card__title">Billetera digital</span>
+                  <span class="payment-card__hint">Mercado Pago, MODO, etc.</span>
+                </div>
+              </div>
+            </label>
+          </div>
 
-          <div class="payment-details">
-            <label>Número de tarjeta<input type="text" name="card-number" inputmode="numeric" pattern="[0-9]{16}" /></label>
+          <div class="payment-details" hidden>
+            <label>
+              Número de tarjeta
+              <input type="text" name="card-number" inputmode="numeric" pattern="[0-9]{16}" placeholder="4444 3333 2222 1111" />
+              <span class="field-hint">Solo si elegís crédito o débito</span>
+            </label>
             <div class="split">
-              <label>Vencimiento<input type="text" name="card-expiry" placeholder="MM/AA" /></label>
-              <label>CVV<input type="text" name="card-cvv" inputmode="numeric" pattern="[0-9]{3}" /></label>
+              <label>
+                Vencimiento
+                <input type="text" name="card-expiry" placeholder="MM/AA" />
+              </label>
+              <label>
+                CVV
+                <input type="text" name="card-cvv" inputmode="numeric" pattern="[0-9]{3}" placeholder="123" />
+              </label>
             </div>
-            <label>Nombre en la tarjeta<input type="text" name="card-name" /></label>
+            <label>
+              Nombre en la tarjeta
+              <input type="text" name="card-name" placeholder="Como figura en el plástico" />
+            </label>
           </div>
 
           <button class="btn btn-outline prev-step" type="button" data-prev="1">Volver</button>
           <button class="btn btn-primary next-step" type="button" data-next="3">Revisar pedido</button>
         </article>
 
-        <article class="checkout-step" data-step="3" hidden>
+        <article class="checkout-step" data-step="3" data-step-title="Confirmación" data-step-desc="Revisá el pedido antes de finalizar." hidden>
           <h2>Confirmación</h2>
           <p>Revisá que todos los datos sean correctos antes de finalizar tu compra.</p>
           <ul class="confirmation-list">
@@ -89,6 +162,16 @@
       </form>
 
       <div class="checkout-feedback" id="checkout-feedback" role="status" aria-live="polite" tabindex="-1"></div>
+      <section class="checkout-success" id="checkout-success" hidden>
+        <div class="success-badge">✔</div>
+        <h2>¡Compra confirmada!</h2>
+        <p>Tu pedido <strong id="success-order">GP-00000</strong> fue procesado con éxito.</p>
+        <p>En pocos minutos vas a recibir un correo con el detalle y el seguimiento.</p>
+        <div class="success-actions">
+          <a class="btn btn-primary" href="plp.html">Seguir comprando</a>
+          <button class="btn btn-outline" type="button" id="new-order">Cargar otro pedido</button>
+        </div>
+      </section>
     </section>
   </main>
 

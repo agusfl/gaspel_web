@@ -25,7 +25,10 @@
         </svg>
         <input class="search-input" type="search" id="search" placeholder="Buscar productos" aria-label="Buscar productos" />
       </div>
-      <a class="btn btn-outline" href="checkout.html">Ver carrito</a>
+      <a class="btn btn-outline cart-link" href="checkout.html">
+        Ver carrito
+        <span class="cart-count" aria-live="polite" aria-atomic="true">0</span>
+      </a>
     </div>
   </header>
 
@@ -77,6 +80,25 @@
       </div>
     </section>
   </main>
+
+  <div class="cart-modal" id="cart-modal" aria-hidden="true">
+    <div class="cart-modal__backdrop" data-close-cart></div>
+    <section class="cart-modal__panel" role="dialog" aria-modal="true" aria-labelledby="cart-modal-title">
+      <header class="cart-modal__header">
+        <h2 id="cart-modal-title">Tu carrito</h2>
+        <button class="cart-modal__close" type="button" data-close-cart aria-label="Cerrar carrito">×</button>
+      </header>
+      <p id="cart-empty" class="cart-modal__empty" hidden>Agregá productos para verlos acá.</p>
+      <ul id="cart-items" class="cart-modal__list"></ul>
+      <footer class="cart-modal__footer" id="cart-footer">
+        <div class="cart-modal__total">
+          <span>Total</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+        <a class="btn btn-primary" href="checkout.html">Finalizar compra</a>
+      </footer>
+    </section>
+  </div>
 
   <div id="cart-feedback" class="sr-only" aria-live="polite"></div>
 
