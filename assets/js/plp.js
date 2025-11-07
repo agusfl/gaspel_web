@@ -9,6 +9,7 @@ const products = [
     fallbackImage: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80',
     installments: '12 cuotas de $45.700',
     rating: 4.8,
+    detailUrl: 'pdp.html',
     sponsored: true
   },
   {
@@ -20,7 +21,8 @@ const products = [
     image: 'assets/img/inodoro.jpg',
     fallbackImage: 'https://images.unsplash.com/photo-1523419409543-0c1df022bddf?auto=format&fit=crop&w=600&q=80',
     installments: '12 cuotas de $31.500',
-    rating: 4.6
+    rating: 4.6,
+    detailUrl: 'pdp.html'
   },
   {
     id: 'griferia-hidroflow',
@@ -31,7 +33,8 @@ const products = [
     image: 'assets/img/griferia.jpg',
     fallbackImage: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80',
     installments: '6 cuotas de $24.500',
-    rating: 4.4
+    rating: 4.4,
+    detailUrl: 'pdp.html'
   },
   {
     id: 'ceramico-ilva',
@@ -42,7 +45,8 @@ const products = [
     image: 'assets/img/ceramica.jpg',
     fallbackImage: 'https://images.unsplash.com/photo-1523419409543-0c1df022bddf?auto=format&fit=crop&w=600&q=80',
     installments: '3 cuotas de $3.700',
-    rating: 4.7
+    rating: 4.7,
+    detailUrl: 'pdp-ceramica.html'
   }
 ];
 
@@ -198,7 +202,7 @@ const renderProducts = items => {
           <p class="installments">${product.installments}</p>
           <p class="rating">⭐ ${product.rating}</p>
           <div class="card-actions">
-            <a class="btn btn-primary btn-sm" href="pdp.html">Ver detalles</a>
+            <a class="btn btn-primary btn-sm" href="${product.detailUrl || 'pdp.html'}">Ver detalles</a>
             <div class="quantity-inline">
               <button type="button" class="btn-icon btn-icon--muted remove-from-cart" data-product-id="${product.id}" aria-label="Quitar ${product.name} del carrito" hidden>
                 −
