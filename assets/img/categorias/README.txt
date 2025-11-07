@@ -1,0 +1,1 @@
+Sponsored images are expected at assets/img/categorias/cocinas.jpg, sanitarios.jpg, and revestimientos.jpg using the provided photos.
