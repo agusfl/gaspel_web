@@ -19,7 +19,12 @@
       <a href="pdp.html">Producto destacado</a>
     </nav>
     <div class="header-actions">
-      <input type="search" id="search" placeholder="Buscar productos" aria-label="Buscar productos" />
+      <div class="search-control">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M10.5 3a7.5 7.5 0 0 1 5.916 12.114l4.235 4.235a1 1 0 0 1-1.414 1.414l-4.235-4.235A7.5 7.5 0 1 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" />
+        </svg>
+        <input class="search-input" type="search" id="search" placeholder="Buscar productos" aria-label="Buscar productos" />
+      </div>
       <a class="btn btn-outline" href="checkout.html">Ver carrito</a>
     </div>
   </header>
@@ -57,11 +62,14 @@
         <h1>Productos destacados</h1>
         <div class="sort">
           <label for="sort-select">Ordenar por</label>
-          <select id="sort-select">
-            <option value="featured">Destacados</option>
-            <option value="price-asc">Precio: menor a mayor</option>
-            <option value="price-desc">Precio: mayor a menor</option>
-          </select>
+          <div class="select-control">
+            <select id="sort-select" class="sort-select">
+              <option value="featured">Destacados</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+            </select>
+            <span class="select-arrow" aria-hidden="true">▾</span>
+          </div>
         </div>
       </div>
       <div class="products-grid" id="product-grid">
@@ -69,6 +77,8 @@
       </div>
     </section>
   </main>
+
+  <div id="cart-feedback" class="sr-only" aria-live="polite"></div>
 
   <footer class="site-footer">
     <p>© Gaspel 2024 · Envíos a todo el país</p>
