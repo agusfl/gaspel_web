@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Gaspel</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="checkout">
+  <header class="site-header">
+    <div class="header-brand">
+      <a href="index.html" class="logo">Gaspel</a>
+    </div>
+    <nav class="primary-nav" aria-label="Progreso del checkout">
+      <ol class="checkout-steps">
+        <li class="active" data-step="1">Dirección</li>
+        <li data-step="2">Pago</li>
+        <li data-step="3">Confirmación</li>
+      </ol>
+    </nav>
+    <a class="btn btn-outline" href="plp.html">Seguir comprando</a>
+  </header>
+
+  <main class="checkout-container">
+    <aside class="order-summary">
+      <h2>Resumen de compra</h2>
+      <ul>
+        <li>
+          <span>Vanitory Nordik 80 cm</span>
+          <strong>$418.099</strong>
+        </li>
+        <li>
+          <span>Inodoro Ferrum</span>
+          <strong>$286.388</strong>
+        </li>
+      </ul>
+      <div class="totals">
+        <p><span>Subtotal</span><span>$704.487</span></p>
+        <p><span>Envío</span><span>$0</span></p>
+        <p class="total"><span>Total</span><span>$704.487</span></p>
+      </div>
+    </aside>
+
+    <section class="checkout-steps-content">
+      <form id="checkout-form">
+        <article class="checkout-step active" data-step="1">
+          <h2>Dirección de entrega</h2>
+          <label>Nombre y apellido<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Teléfono<input type="tel" name="phone" required /></label>
+          <label>Código postal<input type="text" name="zip" required /></label>
+          <label>Dirección<input type="text" name="address" required /></label>
+          <label>Notas para el repartidor<textarea name="notes" rows="3"></textarea></label>
+          <button class="btn btn-primary next-step" type="button" data-next="2">Continuar a pago</button>
+        </article>
+
+        <article class="checkout-step" data-step="2" hidden>
+          <h2>Método de pago</h2>
+          <label><input type="radio" name="payment" value="credit" required /> Tarjeta de crédito</label>
+          <label><input type="radio" name="payment" value="debit" /> Tarjeta de débito</label>
+          <label><input type="radio" name="payment" value="transfer" /> Transferencia bancaria</label>
+          <label><input type="radio" name="payment" value="wallet" /> Billetera digital</label>
+
+          <div class="payment-details">
+            <label>Número de tarjeta<input type="text" name="card-number" inputmode="numeric" pattern="[0-9]{16}" /></label>
+            <div class="split">
+              <label>Vencimiento<input type="text" name="card-expiry" placeholder="MM/AA" /></label>
+              <label>CVV<input type="text" name="card-cvv" inputmode="numeric" pattern="[0-9]{3}" /></label>
+            </div>
+            <label>Nombre en la tarjeta<input type="text" name="card-name" /></label>
+          </div>
+
+          <button class="btn btn-outline prev-step" type="button" data-prev="1">Volver</button>
+          <button class="btn btn-primary next-step" type="button" data-next="3">Revisar pedido</button>
+        </article>
+
+        <article class="checkout-step" data-step="3" hidden>
+          <h2>Confirmación</h2>
+          <p>Revisá que todos los datos sean correctos antes de finalizar tu compra.</p>
+          <ul class="confirmation-list">
+            <li>Entrega a: <span data-summary="name"></span></li>
+            <li>Contacto: <span data-summary="email"></span> · <span data-summary="phone"></span></li>
+            <li>Dirección: <span data-summary="address"></span>, CP <span data-summary="zip"></span></li>
+            <li>Método de pago: <span data-summary="payment"></span></li>
+          </ul>
+          <button class="btn btn-outline prev-step" type="button" data-prev="2">Editar datos</button>
+          <button class="btn btn-primary" type="submit">Finalizar compra</button>
+        </article>
+      </form>
+
+      <div class="checkout-feedback" id="checkout-feedback" role="status" aria-live="polite" tabindex="-1"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Comprá con seguridad · Soporte 24/7 · Garantía oficial</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/checkout.js" defer></script>
+</body>
+</html>

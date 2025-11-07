@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Gaspel</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="plp">
+  <header class="site-header">
+    <div class="header-brand">
+      <a href="index.html" class="logo">Gaspel</a>
+    </div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+    <nav class="primary-nav" id="primary-nav">
+      <a href="index.html">Inicio</a>
+      <a href="plp.html" class="active">Tienda</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="pdp.html">Producto destacado</a>
+    </nav>
+    <div class="header-actions">
+      <input type="search" id="search" placeholder="Buscar productos" aria-label="Buscar productos" />
+      <a class="btn btn-outline" href="checkout.html">Ver carrito</a>
+    </div>
+  </header>
+
+  <main class="layout-grid">
+    <aside class="filters" aria-label="Filtros">
+      <h2>Filtrar por</h2>
+      <form id="filter-form">
+        <fieldset>
+          <legend>Categoría</legend>
+          <label><input type="checkbox" name="category" value="banos" checked /> Baños</label>
+          <label><input type="checkbox" name="category" value="cocinas" checked /> Cocinas</label>
+          <label><input type="checkbox" name="category" value="revestimientos" checked /> Revestimientos</label>
+          <label><input type="checkbox" name="category" value="sanitarios" checked /> Sanitarios</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Marca</legend>
+          <label><input type="checkbox" name="brand" value="ferrum" checked /> Ferrum</label>
+          <label><input type="checkbox" name="brand" value="hydros" checked /> Hydros</label>
+          <label><input type="checkbox" name="brand" value="fv" checked /> FV</label>
+          <label><input type="checkbox" name="brand" value="ilva" checked /> ILVA</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Precio máximo</legend>
+          <input type="range" id="price-range" name="price" min="10000" max="500000" step="10000" value="500000" />
+          <output id="price-output">$500.000</output>
+        </fieldset>
+      </form>
+    </aside>
+
+    <section class="product-list" aria-live="polite">
+      <div class="plp-header">
+        <h1>Productos destacados</h1>
+        <div class="sort">
+          <label for="sort-select">Ordenar por</label>
+          <select id="sort-select">
+            <option value="featured">Destacados</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="product-grid">
+        <!-- Productos generados por JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© Gaspel 2024 · Envíos a todo el país</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/plp.js" defer></script>
+</body>
+</html>

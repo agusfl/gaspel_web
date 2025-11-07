@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanitory | Gaspel</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="pdp">
+  <header class="site-header">
+    <div class="header-brand">
+      <a href="index.html" class="logo">Gaspel</a>
+    </div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+    <nav class="primary-nav" id="primary-nav">
+      <a href="index.html">Inicio</a>
+      <a href="plp.html">Tienda</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+    <a class="btn btn-outline" href="checkout.html">Ver carrito</a>
+  </header>
+
+  <main class="pdp-content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">Inicio</a>
+      <a href="plp.html">Baños</a>
+      <span aria-current="page">Vanitory Nordik 80 cm</span>
+    </nav>
+
+    <section class="pdp-hero">
+      <div class="pdp-gallery">
+        <img id="main-image" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80" alt="Vanitory Nordik" />
+        <div class="thumbnail-list">
+          <button class="thumbnail active" data-image="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=80" alt="Detalle frontal" />
+          </button>
+          <button class="thumbnail" data-image="https://images.unsplash.com/photo-1616628182501-6fd3fc3fcc01?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1616628182501-6fd3fc3fcc01?auto=format&fit=crop&w=300&q=80" alt="Interior del vanitory" />
+          </button>
+          <button class="thumbnail" data-image="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=300&q=80" alt="Vanitory en baño moderno" />
+          </button>
+        </div>
+      </div>
+
+      <div class="pdp-summary">
+        <h1>Vanitory Nordik 80 cm</h1>
+        <p class="brand">Marca: Ferrum</p>
+        <p class="price">$418.099</p>
+        <p class="installments">12 cuotas fijas de $45.700</p>
+        <p class="stock in-stock">Disponible · entrega en 72 hs</p>
+        <div class="pdp-actions">
+          <label for="quantity">Cantidad</label>
+          <div class="quantity-selector">
+            <button type="button" data-action="decrement">-</button>
+            <input id="quantity" type="number" min="1" value="1" />
+            <button type="button" data-action="increment">+</button>
+          </div>
+          <button class="btn btn-primary add-to-cart">Agregar al carrito</button>
+          <button class="btn btn-outline favorite">Agregar a favoritos</button>
+        </div>
+        <ul class="benefits">
+          <li>Envío gratis en CABA y GBA</li>
+          <li>Garantía oficial 5 años</li>
+          <li>Asesoría profesional incluida</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="pdp-details">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="descripcion" role="tab" aria-selected="true">Descripción</button>
+        <button class="tab" data-tab="ficha" role="tab" aria-selected="false">Ficha técnica</button>
+        <button class="tab" data-tab="reviews" role="tab" aria-selected="false">Reviews</button>
+      </div>
+      <article id="descripcion" class="tab-panel active" role="tabpanel">
+        <h2>Descripción</h2>
+        <p>El Vanitory Nordik combina diseño minimalista con materiales resistentes a la humedad. Incluye bacha de apoyo y espacios de guardado optimizados para baños medianos.</p>
+        <ul>
+          <li>Terminación en melamina premium</li>
+          <li>Incluye herrajes soft-close</li>
+          <li>Espacio interno modular</li>
+        </ul>
+      </article>
+      <article id="ficha" class="tab-panel" role="tabpanel" hidden>
+        <h2>Ficha técnica</h2>
+        <table>
+          <tbody>
+            <tr><th>Dimensiones</th><td>80 x 45 x 85 cm</td></tr>
+            <tr><th>Material</th><td>MDF hidrófugo con laqueado mate</td></tr>
+            <tr><th>Peso</th><td>32 kg</td></tr>
+            <tr><th>Incluye</th><td>Bacha, grifería mono comando, kit de instalación</td></tr>
+          </tbody>
+        </table>
+        <a class="btn btn-outline" href="#">Descargar ficha PDF</a>
+      </article>
+      <article id="reviews" class="tab-panel" role="tabpanel" hidden>
+        <h2>Reviews de clientes</h2>
+        <div class="review">
+          <div class="review-header">
+            <strong>Ana R.</strong>
+            <span>★★★★★</span>
+          </div>
+          <p>Excelente calidad y terminaciones. Llegó antes de lo esperado.</p>
+        </div>
+        <div class="review">
+          <div class="review-header">
+            <strong>Julián P.</strong>
+            <span>★★★★☆</span>
+          </div>
+          <p>Muy fácil de instalar y perfecto para espacios reducidos.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="related-products">
+      <h2>Productos relacionados</h2>
+      <div class="products-grid">
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=400&q=80" alt="Grifería cromada" />
+          <h3>Grifería HidroFlow</h3>
+          <p>$132.231</p>
+          <a class="btn btn-outline" href="pdp.html">Ver detalles</a>
+        </article>
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=400&q=80" alt="Espejo circular" />
+          <h3>Espejo Circular XL</h3>
+          <p>$85.900</p>
+          <a class="btn btn-outline" href="pdp.html">Ver detalles</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>¿Necesitás ayuda? Escribinos a <a href="mailto:ventas@gaspel.com.ar">ventas@gaspel.com.ar</a></p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/pdp.js" defer></script>
+</body>
+</html>
